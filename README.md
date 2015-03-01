@@ -18,6 +18,12 @@
 * python
 * java
 
+代码结构
+======================
+* src  源码目录
+* docs 文档目录
+* .provision ansible自动化 `ansible-playbook -i host playbook.yml
+
 快速入门
 =====================
 * [环境配置](docs/install.md)

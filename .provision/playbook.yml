@@ -1,0 +1,11 @@
+---
+  - hosts: all
+    user: vagrant
+    sudo: yes
+    vars_files:
+      - ["vars/common.yml"]
+    roles:
+      - common
+      - env
+      - soft
+      - autohome

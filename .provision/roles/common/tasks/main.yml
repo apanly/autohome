@@ -1,0 +1,6 @@
+---
+  - name: copy 163 source.list
+    copy:  src=sources.list  dest=/etc/apt/
+
+  - name: apt-get update
+    apt: update-cache=yes

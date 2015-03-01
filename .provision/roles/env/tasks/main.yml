@@ -1,0 +1,10 @@
+---
+  - name: mkdir dirs
+    file: path={{ item }} state=directory owner={{ user }} group={{ group }} mode=0755
+    with_items:
+      - "{{ codepath }}"
+      - "{{ codepath }}/config"
+      - "{{ codepath }}/release"
+
+
+

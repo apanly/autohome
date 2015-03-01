@@ -1,0 +1,21 @@
+---
+  - name: install soft
+    apt:  pkg={{ item }} state=present force=yes
+    with_items:
+      - nginx
+      - mysql-client
+      - mysql-server
+      - python-virtualenv
+      - git
+      - supervisor
+      - libmysqlclient-dev
+      - python-dev
+
+  - name: restart nginx
+    service: name=nginx state=restarted
+
+  - name: mkdir .pip
+    file: path=/home/vagrant/.pip state=directory owner={{ user }} group={{ group }} mode=0755
+
+  - name: cp pip.conf
+    copy: src=pip.conf dest=/home/vagrant/.pip/

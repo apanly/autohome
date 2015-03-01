@@ -1,0 +1,51 @@
+---
+  -  name: git clone cmdb
+     git: repo=http://gitlab.corp.anjuke.com/Vincentguo/cmdb.git dest={{ codepath }}/release/{{ version }}
+
+  -  name: virtualenv virpython
+     command: chdir={{ codepath }}  /usr/bin/virtualenv virpython
+
+  - name: pip install module
+    pip:  name={{ item }} virtualenv=/home/www/virpython
+    with_items:
+      - flask
+      - Flask-Script
+      - Flask-Assets
+      - sqlalchemy
+      - Flask-SQLAlchemy
+      - flask-login
+      - mysql-python
+      - IPy
+      - PyPages
+      - celery-with-redis
+      - ply
+      - cssmin
+      - jsmin
+      - xlwt
+      - requests
+      - uwsgi
+
+
+  -  name: cp supervisor file
+     copy: src=supervisor/cmdb.conf  dest=/etc/supervisor/conf.d/
+
+  -  name: cp cmdb shell
+     copy: src=cmdb.sh    dest={{ codepath }}/cmdb_shells/
+
+  -  name: cp config
+     copy: src=config.py dest={{ codepath }}/release/{{ version }}/src/cmdb
+
+  -  name: touch ga
+     shell: echo '{{ version }}' > {{ codepath }}/config/RELEASE_VERSION_GA
+
+  - name: cp nginx for cmdb
+    copy: src=nginx/cmdb.conf dest=/etc/nginx/conf.d/
+
+  - name: restart nginx
+    service: name=nginx state=restarted
+
+  - name: creat database cmdb
+    mysql_db: db=cmdb state=present login_user=root login_password=  encoding=utf8 collation=utf8_general_ci
+
+  - name: create tables
+    shell:  cd {{ codepath }}/release/{{ version }}/src/cmdb && /home/www/virpython/bin/python manage.py create_data

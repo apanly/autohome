@@ -1,0 +1,5 @@
+---
+  codepath: /home/www
+  user: vagrant
+  group: www-data
+  version: 20150501

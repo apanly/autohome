@@ -1,0 +1,2 @@
+[auto_cmdb]
+192.168.22.10  ansible_ssh_pass=vagrant
