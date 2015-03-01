@@ -1,0 +1,5 @@
+*.pyc
+*.wav
+env/*
+src/myapp.log
+myapp.log
