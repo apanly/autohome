@@ -22,7 +22,7 @@
 ======================
 * src  源码目录
 * docs 文档目录
-* .provision ansible自动化 `ansible-playbook -i host playbook.yml
+* .provision ansible自动化 ```ansible-playbook -i host playbook.yml
 
 快速入门
 =====================
