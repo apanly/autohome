@@ -27,10 +27,6 @@
 
 快速入门
 =====================
-<<<<<<< HEAD
-* [环境配置](docs/install.md)
-=======
 * 操作系统 Ubuntu
 * ansible自动化
 * [环境配置](docs/install.md)
->>>>>>> provision
