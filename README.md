@@ -30,3 +30,7 @@
 * 操作系统 Ubuntu
 * ansible自动化
 * [环境配置](docs/install.md)
+* [文本分类](http://textgrocery.readthedocs.org/zh/latest/index.html)
+* [PM2.5](http://www.pm25.in/api_doc)
+* [人脸识别](http://www.faceplusplus.com.cn/uc_home/)
+* [电视节目表](http://epg.tvsou.com/programys/TV_44/Channel_18/W1.htm)

@@ -21,13 +21,15 @@ def init():
     init_log()
 
 def main():
-    pass
+    writePID(PIDLOG)
+    from cmd.weather import Weather
+    target = Weather('上海')
+    target.get()
 
 if __name__ == "__main__":
     init()
     PIDLOG = Config.get('global','PID')
     atexit.register(lambda:deletePID(PIDLOG))
-    writePID(PIDLOG)
     params=sys.argv
     if len(params)<2:
         Usage()
@@ -39,6 +41,6 @@ if __name__ == "__main__":
             else:
                 main()
         elif params[1]=="stop":
-            stop()
+            stop(PIDLOG)
         elif params[1]=="restart":
             pass
