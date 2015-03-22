@@ -15,7 +15,8 @@
 
 APP UI图
 ======================
-* ![UI图](docs/static/1.png)
+* ![UI图1](docs/static/1.png)
+* ![UI图2](docs/static/2.png)
 
 开发语言
 ======================
