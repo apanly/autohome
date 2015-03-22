@@ -13,11 +13,15 @@
 * 语意识别 (java apache Lucene)
 * [指令中心](docs/cmd.md)
 
+APP UI图
+======================
+* [UI图](docs.static/1.png)
 
 开发语言
 ======================
 * python
 * java
+
 
 代码结构
 ======================
